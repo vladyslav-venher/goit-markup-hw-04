@@ -292,15 +292,15 @@ address {
 }
 
 .team-item-lowpart {
-    padding-top: 32px;
+    padding: 32px 0;
 }
 
 .team-icons-list {
     display: flex;
     gap: 24px;
+    justify-content: center;
     padding-right: 16px;
     padding-left: 16px;
-    padding-bottom: 32px;
 }
 
 .team-list-icon {
