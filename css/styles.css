@@ -58,6 +58,9 @@ address {
 
 .header {
     border-bottom: 1px solid #e7e9fc;
+    box-shadow: 0px 2px 1px rgba(46, 47, 66, 0.08),
+        0px 1px 1px rgba(46, 47, 66, 0.16),
+        0px 1px 6px rgba(46, 47, 66, 0.08);
 }
 
 .header-container {
@@ -153,12 +156,13 @@ address {
     background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), url(../images/hero-image.jpg);
     background-repeat: no-repeat;
     background-size: cover; 
+    background-position: center;
+    max-width: 1440px;
 } 
 
 .hero-wrap {
     display: flex;
     flex-direction: column;
-
 }
 
 .hero-title {
@@ -187,6 +191,7 @@ address {
     border: none;
     align-self: center;
     min-width: 169px;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .hero-button:hover,
@@ -208,13 +213,14 @@ address {
     width: calc((100% - 24px * 3) / 4)
 }
 
-.features-icon {
-    background-color: #f4f4fd;
-    border: 1px solid #8e8f99;
-    border-radius: 4px;
-    width: 264px;
+.features-icon-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     height: 112px;
-    padding: 24px 100px;
+    background-color: #f4f4fd;
+    border-radius: 4px;
+    border: 1px solid #8e8f99;
     margin-bottom: 8px;
 }
 
@@ -256,6 +262,7 @@ address {
 .team-list {
     display: flex;
     gap: 24px;
+    justify-content: center;
 }
 
 .team-item {
@@ -285,7 +292,7 @@ address {
 }
 
 .team-item-lowpart {
-    padding: 32px 0;
+    padding-top: 32px;
 }
 
 .team-icons-list {
@@ -302,20 +309,24 @@ address {
 }
 
 .team-item-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 100%;
     height: 100%;
     background-color: #4D5AE5;
     padding: 12px;
-    border-radius: 100px;
+    border-radius: 50%;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.team-item-link:hover, .team-item-link:focus {
+    background-color: #404bbf;
 }
 
 .team-icon {
     fill: #f4f4fd;
-    width: 16px;
-    height: 16px;
 }
-
-
 
 .portfolio {
     padding-top: 120px;
@@ -341,10 +352,16 @@ address {
 
 .portfolio-item {
     width: calc((100% - 2 * 24px) / 3);
+    transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.portfolio-item:hover,
+.portfolio-item:focus {
+    box-shadow: 0 2px 1px 0 rgba(46, 47, 66, 0.08), 0 1px 1px 0 rgba(46, 47, 66, 0.16), 0 1px 6px 0 rgba(46, 47, 66, 0.08);
 }
 
 .portfolio-item:hover .portfolio-cover-text {
-    transform: translateY(0);
+    transform: translateY(0%);
 }
 
 .portfolio-cover-wrap {
@@ -355,15 +372,15 @@ address {
 .portfolio-cover-text {
     position: absolute;
     top: 0;
+    width: 100%;
+    height: 100%;
     font-size: 16px;
     line-height: 1.5;
     letter-spacing: 0.02em;
     color: #f4f4fd;
-    padding-top: 40px;
-    padding-right: 32px;
-    padding-left: 32px;
-    transform: translateY(200%);
-    transition: transform 300ms ease;
+    padding: 40px 32px;
+    transform: translateY(100%);
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
     background-color: #4d5ae5;
 }
 
@@ -376,10 +393,7 @@ address {
     transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.portfolio-item-lowpart:hover,
-.portfolio-item-lowpart:focus {
-    box-shadow: 0 2px 1px 0 rgba(46, 47, 66, 0.08), 0 1px 1px 0 rgba(46, 47, 66, 0.16), 0 1px 6px 0 rgba(46, 47, 66, 0.08);
-}
+
 
 .portfolio-subtitle {
     font-weight: 500;
@@ -405,13 +419,13 @@ address {
     padding-bottom: 100px;
 }
 
-.footer-text {
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 1.5;
-    letter-spacing: 0.02em;
-    color: #f4f4fd;
-    max-width: 264px;
+.footer-wrap {
+    display: flex;
+    align-items: baseline;
+}
+
+.footer-logotext-part {
+    margin-right: 120px;
 }
 
 .logo-footer-part {
@@ -421,4 +435,51 @@ address {
 .footer-logo {
     display: inline-block;
     margin-bottom: 16px;
+}
+
+.footer-text {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+    color: #f4f4fd;
+    max-width: 264px;
+}
+
+.footer-social-links-text {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+    color: #fff;
+    margin-bottom: 16px;
+}
+
+.footer-social-list {
+    display: flex;
+    gap: 16px;
+}
+
+.footer-list-icon {
+    width: 40px;
+    height: 40px;
+}
+
+.footer-item-link {
+    width: 100%;
+    height: 100%;
+    background-color: #4d5ae5;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.footer-item-link:hover, .footer-item-link:focus {
+    background-color: #31d0aa;
+}
+
+.footer-icon {
+    fill: #f4f4fd;
 }
